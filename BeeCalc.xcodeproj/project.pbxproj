@@ -10,12 +10,23 @@
 		F496AC022BF3E08D006E697F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC012BF3E08D006E697F /* AppDelegate.swift */; };
 		F496AC042BF3E08D006E697F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC032BF3E08D006E697F /* SceneDelegate.swift */; };
 		F496AC062BF3E08D006E697F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC052BF3E08D006E697F /* ViewController.swift */; };
-		F496AC092BF3E08D006E697F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F496AC082BF3E08D006E697F /* Base */; };
 		F496AC0B2BF3E08E006E697F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F496AC0A2BF3E08E006E697F /* Assets.xcassets */; };
 		F496AC0E2BF3E08E006E697F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F496AC0D2BF3E08E006E697F /* Base */; };
 		F496AC192BF3E08F006E697F /* BeeCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC182BF3E08F006E697F /* BeeCalcTests.swift */; };
 		F496AC232BF3E08F006E697F /* BeeCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC222BF3E08F006E697F /* BeeCalcUITests.swift */; };
 		F496AC252BF3E08F006E697F /* BeeCalcUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC242BF3E08F006E697F /* BeeCalcUITestsLaunchTests.swift */; };
+		F496AC342BF3EB81006E697F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC332BF3EB81006E697F /* HomeViewController.swift */; };
+		F496AC392BF3F0A1006E697F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC382BF3F0A1006E697F /* Button.swift */; };
+		F496AC3C2BF3FC08006E697F /* ButtonVariants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC3B2BF3FC08006E697F /* ButtonVariants.swift */; };
+		F496AC3E2BF406EE006E697F /* ButtonFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC3D2BF406EE006E697F /* ButtonFields.swift */; };
+		F496AC422BF4ED01006E697F /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC412BF4ED01006E697F /* CalculatorViewController.swift */; };
+		F496AC452BF54484006E697F /* BigTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC442BF54484006E697F /* BigTitle.swift */; };
+		F496AC472BF54A6A006E697F /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC462BF54A6A006E697F /* Title.swift */; };
+		F496AC492BF54EAD006E697F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC482BF54EAD006E697F /* Card.swift */; };
+		F496AC4B2BF63D61006E697F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC4A2BF63D61006E697F /* DataController.swift */; };
+		F496AC4E2BF63DC8006E697F /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC4D2BF63DC8006E697F /* Formula.swift */; };
+		F496AC502BF63FD3006E697F /* DataControllerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC4F2BF63FD3006E697F /* DataControllerErrors.swift */; };
+		F496AC522BF640D0006E697F /* GeneralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC512BF640D0006E697F /* GeneralController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +51,6 @@
 		F496AC012BF3E08D006E697F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F496AC032BF3E08D006E697F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F496AC052BF3E08D006E697F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F496AC082BF3E08D006E697F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F496AC0A2BF3E08E006E697F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F496AC0D2BF3E08E006E697F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F496AC0F2BF3E08E006E697F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +59,18 @@
 		F496AC1E2BF3E08F006E697F /* BeeCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeeCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F496AC222BF3E08F006E697F /* BeeCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeCalcUITests.swift; sourceTree = "<group>"; };
 		F496AC242BF3E08F006E697F /* BeeCalcUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeCalcUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F496AC332BF3EB81006E697F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F496AC382BF3F0A1006E697F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		F496AC3B2BF3FC08006E697F /* ButtonVariants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonVariants.swift; sourceTree = "<group>"; };
+		F496AC3D2BF406EE006E697F /* ButtonFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFields.swift; sourceTree = "<group>"; };
+		F496AC412BF4ED01006E697F /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		F496AC442BF54484006E697F /* BigTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTitle.swift; sourceTree = "<group>"; };
+		F496AC462BF54A6A006E697F /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		F496AC482BF54EAD006E697F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		F496AC4A2BF63D61006E697F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		F496AC4D2BF63DC8006E697F /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
+		F496AC4F2BF63FD3006E697F /* DataControllerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerErrors.swift; sourceTree = "<group>"; };
+		F496AC512BF640D0006E697F /* GeneralController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +121,13 @@
 		F496AC002BF3E08D006E697F /* BeeCalc */ = {
 			isa = PBXGroup;
 			children = (
+				F496AC4C2BF63D9E006E697F /* Models */,
+				F496AC3A2BF3FBF7006E697F /* Enums */,
+				F496AC322BF3EB4C006E697F /* Controllers */,
+				F496AC312BF3EB30006E697F /* Views */,
 				F496AC012BF3E08D006E697F /* AppDelegate.swift */,
 				F496AC032BF3E08D006E697F /* SceneDelegate.swift */,
 				F496AC052BF3E08D006E697F /* ViewController.swift */,
-				F496AC072BF3E08D006E697F /* Main.storyboard */,
 				F496AC0A2BF3E08E006E697F /* Assets.xcassets */,
 				F496AC0C2BF3E08E006E697F /* LaunchScreen.storyboard */,
 				F496AC0F2BF3E08E006E697F /* Info.plist */,
@@ -125,6 +150,62 @@
 				F496AC242BF3E08F006E697F /* BeeCalcUITestsLaunchTests.swift */,
 			);
 			path = BeeCalcUITests;
+			sourceTree = "<group>";
+		};
+		F496AC312BF3EB30006E697F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F496AC372BF3F08C006E697F /* Components */,
+				F496AC332BF3EB81006E697F /* HomeViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F496AC322BF3EB4C006E697F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F496AC4A2BF63D61006E697F /* DataController.swift */,
+				F496AC512BF640D0006E697F /* GeneralController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F496AC372BF3F08C006E697F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F496AC432BF54470006E697F /* Typography */,
+				F496AC382BF3F0A1006E697F /* Button.swift */,
+				F496AC412BF4ED01006E697F /* CalculatorViewController.swift */,
+				F496AC482BF54EAD006E697F /* Card.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F496AC3A2BF3FBF7006E697F /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				F496AC3B2BF3FC08006E697F /* ButtonVariants.swift */,
+				F496AC3D2BF406EE006E697F /* ButtonFields.swift */,
+				F496AC4F2BF63FD3006E697F /* DataControllerErrors.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		F496AC432BF54470006E697F /* Typography */ = {
+			isa = PBXGroup;
+			children = (
+				F496AC442BF54484006E697F /* BigTitle.swift */,
+				F496AC462BF54A6A006E697F /* Title.swift */,
+			);
+			path = Typography;
+			sourceTree = "<group>";
+		};
+		F496AC4C2BF63D9E006E697F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F496AC4D2BF63DC8006E697F /* Formula.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +314,6 @@
 			files = (
 				F496AC0B2BF3E08E006E697F /* Assets.xcassets in Resources */,
 				F496AC0E2BF3E08E006E697F /* Base in Resources */,
-				F496AC092BF3E08D006E697F /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +338,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F496AC392BF3F0A1006E697F /* Button.swift in Sources */,
+				F496AC4B2BF63D61006E697F /* DataController.swift in Sources */,
 				F496AC062BF3E08D006E697F /* ViewController.swift in Sources */,
+				F496AC472BF54A6A006E697F /* Title.swift in Sources */,
+				F496AC3E2BF406EE006E697F /* ButtonFields.swift in Sources */,
 				F496AC022BF3E08D006E697F /* AppDelegate.swift in Sources */,
+				F496AC502BF63FD3006E697F /* DataControllerErrors.swift in Sources */,
+				F496AC3C2BF3FC08006E697F /* ButtonVariants.swift in Sources */,
+				F496AC492BF54EAD006E697F /* Card.swift in Sources */,
+				F496AC522BF640D0006E697F /* GeneralController.swift in Sources */,
 				F496AC042BF3E08D006E697F /* SceneDelegate.swift in Sources */,
+				F496AC422BF4ED01006E697F /* CalculatorViewController.swift in Sources */,
+				F496AC4E2BF63DC8006E697F /* Formula.swift in Sources */,
+				F496AC342BF3EB81006E697F /* HomeViewController.swift in Sources */,
+				F496AC452BF54484006E697F /* BigTitle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +389,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F496AC072BF3E08D006E697F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F496AC082BF3E08D006E697F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F496AC0C2BF3E08E006E697F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -447,7 +531,6 @@
 				INFOPLIST_FILE = BeeCalc/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -475,7 +558,6 @@
 				INFOPLIST_FILE = BeeCalc/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
