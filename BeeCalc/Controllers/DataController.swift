@@ -48,7 +48,7 @@ class DataController {
         }
     }
     
-    // Deltete Formulas
+    // Delete Formulas
     @MainActor
     public func deleteFormula(_ formula: Formula) -> Result<Bool, DataControllerErrors> {
         container.mainContext.delete(formula)

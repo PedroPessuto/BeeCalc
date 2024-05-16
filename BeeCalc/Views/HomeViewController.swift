@@ -84,15 +84,17 @@ class HomeViewController: UIViewController {
         list.translatesAutoresizingMaskIntoConstraints = false
         list.showsVerticalScrollIndicator = false
         
+        
         NSLayoutConstraint.activate([
             list.topAnchor.constraint(equalTo: text.bottomAnchor, constant: 20),
             list.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             list.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             list.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
-                
+        
         list.addSubview(stackView)
         stackView.axis = .vertical
+        stackView.spacing = 25
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -104,13 +106,24 @@ class HomeViewController: UIViewController {
         ])
     }
     
+    func teste() {
+        print("Edit action triggered")
+    }
+    
     private func setCards() {
-        for i in 1...10 {
-            let card = Card(formula: Formula(name: "Teste \(i)"))
+        for i in 0..<10 {
+            let card = Card(formula: Formula(name: "Teste \(i + 1)"))
+            card.editAction = teste
+            card.deleteAction = teste
             stackView.addArrangedSubview(card)
         }
+        //        for i in 0..<generalController.formulas.count {
+        //            let card = Card(formula: generalController.formulas[i])
+        //            stackView.addArrangedSubview(card)
+        //        }
     }
 }
+
 
 
 #Preview {

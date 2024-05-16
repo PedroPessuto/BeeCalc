@@ -14,6 +14,10 @@ class GeneralController {
     public var formulas: [Formula] = []
     
     private init() {
+        getFormulas()
+    }
+    
+    public func getFormulas() {
         Task {
             let response: Result<[Formula], DataControllerErrors> = await dataController.getFormulas()
             if case .success(let formulas) = response {
@@ -21,4 +25,22 @@ class GeneralController {
             }
         }
     }
+    
+    public func addFormula() {
+        Task {
+            let formula: Formula = Formula(name: "Fórmula \(formulas.count + 1)")
+            let _ = await dataController.createFormula(formula)
+            formulas.append(formula)
+        }
+    }
+    
+    public func deleteFormula(_ formula: Formula) {
+        Task {
+            let _ = await dataController.deleteFormula(formula)
+            formulas.removeAll { index in
+                index.id == formula.id
+            }
+        }
+    }
+    
 }

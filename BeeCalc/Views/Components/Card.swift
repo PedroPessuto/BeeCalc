@@ -11,6 +11,8 @@ class Card: UIView {
     
     // ========== ATTRIBUTES ==========
     public var formula: Formula? = nil
+    public var deleteAction: () -> Void = {}
+    public var editAction: () -> Void = {}
     private let head: UIView = UIView()
     private let title: Title = Title(text: "")
     private let footer: UIView = UIView()
@@ -36,9 +38,9 @@ class Card: UIView {
         setTitle()
         setFooter()
         
-        NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(greaterThanOrEqualToConstant: 200)
-        ])
+//        NSLayoutConstraint.activate([
+//            self.heightAnchor.constraint(greaterThanOrEqualToConstant: 175)
+//        ])
     }
     
     private func setHead() {
@@ -72,9 +74,8 @@ class Card: UIView {
     
     private func setFooter() {
         addSubview(footer)
-        
-        footer.translatesAutoresizingMaskIntoConstraints = false
         footer.backgroundColor = UIColor.black
+        footer.translatesAutoresizingMaskIntoConstraints = false
         footer.layer.cornerRadius = 10
         footer.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         
@@ -82,6 +83,8 @@ class Card: UIView {
             footer.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             footer.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             footer.topAnchor.constraint(equalTo: head.bottomAnchor),
+            footer.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            footer.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         let leftContainer: UIView = UIView()
@@ -92,7 +95,7 @@ class Card: UIView {
         leftContainer.layer.maskedCorners = [.layerMinXMaxYCorner]
         
         NSLayoutConstraint.activate([
-            leftContainer.heightAnchor.constraint(equalToConstant: 50),
+            leftContainer.heightAnchor.constraint(equalTo: footer.heightAnchor),
             leftContainer.widthAnchor.constraint(equalTo: footer.widthAnchor, multiplier: 0.5),
             leftContainer.leadingAnchor.constraint(equalTo: footer.leadingAnchor),
             leftContainer.topAnchor.constraint(equalTo: footer.topAnchor)
@@ -104,11 +107,15 @@ class Card: UIView {
         leftImage.tintColor = UIColor.white
         
         NSLayoutConstraint.activate([
+        
             leftImage.heightAnchor.constraint(equalToConstant: 24),
             leftImage.widthAnchor.constraint(equalToConstant: 24),
             leftImage.centerYAnchor.constraint(equalTo: leftContainer.centerYAnchor),
             leftImage.centerXAnchor.constraint(equalTo: leftContainer.centerXAnchor)
         ])
+        
+        let leftTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDeleteAction))
+        leftContainer.addGestureRecognizer(leftTapGesture)
         
         let rightContainer: UIView = UIView()
         footer.addSubview(rightContainer)
@@ -118,7 +125,7 @@ class Card: UIView {
         rightContainer.layer.maskedCorners = [.layerMaxXMaxYCorner]
         
         NSLayoutConstraint.activate([
-            rightContainer.heightAnchor.constraint(equalToConstant: 50),
+            rightContainer.heightAnchor.constraint(equalTo: footer.heightAnchor),
             rightContainer.widthAnchor.constraint(equalTo: footer.widthAnchor, multiplier: 0.5),
             rightContainer.trailingAnchor.constraint(equalTo: footer.trailingAnchor),
             rightContainer.topAnchor.constraint(equalTo: footer.topAnchor)
@@ -135,5 +142,16 @@ class Card: UIView {
             rightImage.centerYAnchor.constraint(equalTo: rightContainer.centerYAnchor),
             rightImage.centerXAnchor.constraint(equalTo: rightContainer.centerXAnchor)
         ])
+        
+        let rightTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleEditAction))
+        rightContainer.addGestureRecognizer(rightTapGesture)
+    }
+    
+    @objc private func handleDeleteAction() {
+        deleteAction()
+    }
+    
+    @objc private func handleEditAction() {
+        editAction()
     }
 }
