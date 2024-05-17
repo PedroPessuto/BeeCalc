@@ -26,12 +26,11 @@ class GeneralController {
         }
     }
     
-    public func addFormula() {
-        Task {
-            let formula: Formula = Formula(name: "Fórmula \(formulas.count + 1)")
-            let _ = await dataController.createFormula(formula)
-            formulas.append(formula)
-        }
+    public func addFormula() async -> Result<Formula, Error> {
+        let formula: Formula = Formula(name: "Fórmula \(formulas.count + 1)")
+//        let _ = await dataController.createFormula(formula)
+        formulas.append(formula)
+        return .success(formula)
     }
     
     public func deleteFormula(_ formula: Formula) {
@@ -42,5 +41,4 @@ class GeneralController {
             }
         }
     }
-    
 }

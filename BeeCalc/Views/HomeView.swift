@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeView: UIViewController {
     
     // ========== ATTRIBUTES ==========
     let generalController: GeneralController = GeneralController.shared
@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     let text: BigTitle = BigTitle(text: "Fórmulas")
     let list: UIScrollView = UIScrollView()
     let stackView: UIStackView = UIStackView()
+    
     
     // ========== METHODS ==========
     override func viewDidLoad() {
@@ -36,12 +37,23 @@ class HomeViewController: UIViewController {
         self.view.backgroundColor = UIColor(named: "CinzaClaro")
     }
     
+    @objc private func addFormula() {
+        print("Criado")
+        
+        self.navigationController?.pushViewController(CalculatorView(), animated: true)
+       
+//        let response = await generalController.addFormula()
+//        if case .success(let formula) = response {
+//            navigationController?.pushViewController(CalculatorView(formula: formula), animated: true)
+//        }
+    }
+    
     private func setToolbar() {
         self.view.addSubview(header)
         header.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            header.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            header.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             header.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             header.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             header.heightAnchor.constraint(equalToConstant: 65)
@@ -50,6 +62,9 @@ class HomeViewController: UIViewController {
         // Add Button
         header.addSubview(addButton)
         addButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        let addButtonTap = UITapGestureRecognizer(target: self, action: #selector(addFormula))
+        addButton.gestureRecognizers?.append(addButtonTap)
         
         NSLayoutConstraint.activate([
             addButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 65),
@@ -110,6 +125,7 @@ class HomeViewController: UIViewController {
         print("Edit action triggered")
     }
     
+    
     private func setCards() {
         for i in 0..<10 {
             let card = Card(formula: Formula(name: "Teste \(i + 1)"))
@@ -119,14 +135,15 @@ class HomeViewController: UIViewController {
         }
         //        for i in 0..<generalController.formulas.count {
         //            let card = Card(formula: generalController.formulas[i])
+        //
+        //        card.deleteAction = generalController.deleteFormula(generalController.formulas[i])
         //            stackView.addArrangedSubview(card)
         //        }
     }
 }
 
 
-
 #Preview {
-    HomeViewController()
+    UINavigationController(rootViewController: HomeView())
 }
 

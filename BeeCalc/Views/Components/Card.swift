@@ -37,10 +37,6 @@ class Card: UIView {
         setHead()
         setTitle()
         setFooter()
-        
-//        NSLayoutConstraint.activate([
-//            self.heightAnchor.constraint(greaterThanOrEqualToConstant: 175)
-//        ])
     }
     
     private func setHead() {
