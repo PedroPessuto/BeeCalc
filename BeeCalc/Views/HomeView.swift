@@ -24,6 +24,8 @@ class HomeView: UIViewController {
         setElements()
     }
     
+    
+    
     private func setElements() {
         setBackground()
         setToolbar()
@@ -36,17 +38,13 @@ class HomeView: UIViewController {
         self.view.backgroundColor = UIColor(named: "CinzaClaro")
     }
     
-    private func dismissCalcView() {
-        dismiss(animated: true)
-    }
-    
     @objc private func addFormula() {
         self.navigationController?.pushViewController(CalculatorView(), animated: true)
-        print("Foi")
         Task {
-            await self.generalController.addFormula()
+            let _ = await self.generalController.addFormula()
+            setCards()
         }
-        setCards()
+        
 
         
         
@@ -140,22 +138,24 @@ class HomeView: UIViewController {
     
     
     private func setCards() {
-        //        for i in 0..<10 {
-        //            let card = Card(formula: Formula(name: "Teste \(i + 1)"))
-        //            card.editAction = teste
-        //            card.deleteAction = teste
-        //            stackView.addArrangedSubview(card)
-        //        }
-        for viewInStack in stackView.subviews {
-            stackView.removeArrangedSubview(viewInStack)
-        }
+        Task {
+            for viewInStack in stackView.subviews {
+                stackView.removeArrangedSubview(viewInStack)
+            }
             
+            let _ = await generalController.getFormulas()
             
-        for i in 0..<generalController.formulas.count {
-            let card = Card(formula: generalController.formulas[i])
-
-//        card.deleteAction = generalController.deleteFormula(generalController.formulas[i])
-            stackView.addArrangedSubview(card)
+            for i in 0..<generalController.formulas.count {
+                let card = Card(formula: generalController.formulas[i])
+                card.deleteAction = { [weak self] in
+                    guard let self = self else { return }
+                    Task {
+                        await self.generalController.deleteFormula(self.generalController.formulas[i])
+                        self.setCards()
+                    }
+                }
+                stackView.addArrangedSubview(card)
+            }
         }
     }
 }

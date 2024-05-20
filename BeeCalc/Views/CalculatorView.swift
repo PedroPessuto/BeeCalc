@@ -30,7 +30,6 @@ class CalculatorView: UIViewController {
     }
     
     @objc private func backButtonAction() {
-        print("Clicado")
 //        navigationController?.dismiss(animated: true)
         navigationController?.popViewController(animated: true)
 //        dismiss(animated: true, completion: nil)

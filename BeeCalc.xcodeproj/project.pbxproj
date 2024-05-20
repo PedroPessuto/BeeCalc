@@ -26,6 +26,7 @@
 		F496AC502BF63FD3006E697F /* DataControllerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC4F2BF63FD3006E697F /* DataControllerErrors.swift */; };
 		F496AC522BF640D0006E697F /* GeneralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC512BF640D0006E697F /* GeneralController.swift */; };
 		F496AC542BF7C737006E697F /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC532BF7C737006E697F /* CalculatorView.swift */; };
+		F4B8BB912BFBC8250044539D /* GeneralControllerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B8BB902BFBC8250044539D /* GeneralControllerErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		F496AC4F2BF63FD3006E697F /* DataControllerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerErrors.swift; sourceTree = "<group>"; };
 		F496AC512BF640D0006E697F /* GeneralController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralController.swift; sourceTree = "<group>"; };
 		F496AC532BF7C737006E697F /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		F4B8BB902BFBC8250044539D /* GeneralControllerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralControllerErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				F496AC3B2BF3FC08006E697F /* ButtonVariants.swift */,
 				F496AC3D2BF406EE006E697F /* ButtonFields.swift */,
 				F496AC4F2BF63FD3006E697F /* DataControllerErrors.swift */,
+				F4B8BB902BFBC8250044539D /* GeneralControllerErrors.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			files = (
 				F496AC392BF3F0A1006E697F /* Button.swift in Sources */,
 				F496AC4B2BF63D61006E697F /* DataController.swift in Sources */,
+				F4B8BB912BFBC8250044539D /* GeneralControllerErrors.swift in Sources */,
 				F496AC472BF54A6A006E697F /* Title.swift in Sources */,
 				F496AC3E2BF406EE006E697F /* ButtonFields.swift in Sources */,
 				F496AC022BF3E08D006E697F /* AppDelegate.swift in Sources */,
