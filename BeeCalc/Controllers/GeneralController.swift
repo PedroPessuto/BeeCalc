@@ -30,6 +30,7 @@ class GeneralController {
         let formula: Formula = Formula(name: "Fórmula \(formulas.count + 1)")
 //        let _ = await dataController.createFormula(formula)
         formulas.append(formula)
+        print(formulas.count)
         return .success(formula)
     }
     

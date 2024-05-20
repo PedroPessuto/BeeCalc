@@ -18,7 +18,6 @@ class HomeView: UIViewController {
     let list: UIScrollView = UIScrollView()
     let stackView: UIStackView = UIStackView()
     
-    
     // ========== METHODS ==========
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +36,25 @@ class HomeView: UIViewController {
         self.view.backgroundColor = UIColor(named: "CinzaClaro")
     }
     
+    private func dismissCalcView() {
+        dismiss(animated: true)
+    }
+    
     @objc private func addFormula() {
-        print("Criado")
-        
         self.navigationController?.pushViewController(CalculatorView(), animated: true)
-       
+        print("Foi")
+        Task {
+            await self.generalController.addFormula()
+        }
+        setCards()
+
+        
+        
+//        let calculatorView = CalculatorView()
+//        calculatorView.modalPresentationStyle = .fullScreen
+//        present(calculatorView, animated: true, completion: nil)
+        
+        
 //        let response = await generalController.addFormula()
 //        if case .success(let formula) = response {
 //            navigationController?.pushViewController(CalculatorView(formula: formula), animated: true)
@@ -127,18 +140,23 @@ class HomeView: UIViewController {
     
     
     private func setCards() {
-        for i in 0..<10 {
-            let card = Card(formula: Formula(name: "Teste \(i + 1)"))
-            card.editAction = teste
-            card.deleteAction = teste
-            stackView.addArrangedSubview(card)
-        }
-        //        for i in 0..<generalController.formulas.count {
-        //            let card = Card(formula: generalController.formulas[i])
-        //
-        //        card.deleteAction = generalController.deleteFormula(generalController.formulas[i])
+        //        for i in 0..<10 {
+        //            let card = Card(formula: Formula(name: "Teste \(i + 1)"))
+        //            card.editAction = teste
+        //            card.deleteAction = teste
         //            stackView.addArrangedSubview(card)
         //        }
+        for viewInStack in stackView.subviews {
+            stackView.removeArrangedSubview(viewInStack)
+        }
+            
+            
+        for i in 0..<generalController.formulas.count {
+            let card = Card(formula: generalController.formulas[i])
+
+//        card.deleteAction = generalController.deleteFormula(generalController.formulas[i])
+            stackView.addArrangedSubview(card)
+        }
     }
 }
 
