@@ -44,10 +44,7 @@ class HomeView: UIViewController {
             let _ = await self.generalController.addFormula()
             setCards()
         }
-        
 
-        
-        
 //        let calculatorView = CalculatorView()
 //        calculatorView.modalPresentationStyle = .fullScreen
 //        present(calculatorView, animated: true, completion: nil)
@@ -84,15 +81,15 @@ class HomeView: UIViewController {
         ])
         
         // Import Button
-        header.addSubview(importButton)
-        importButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            importButton.widthAnchor.constraint(equalToConstant: 65),
-            importButton.heightAnchor.constraint(equalToConstant: 65),
-            importButton.trailingAnchor.constraint(equalTo: addButton.leadingAnchor, constant: -10),
-            importButton.centerYAnchor.constraint(equalTo: addButton.centerYAnchor)
-        ])
+//        header.addSubview(importButton)
+//        importButton.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        NSLayoutConstraint.activate([
+//            importButton.widthAnchor.constraint(equalToConstant: 65),
+//            importButton.heightAnchor.constraint(equalToConstant: 65),
+//            importButton.trailingAnchor.constraint(equalTo: addButton.leadingAnchor, constant: -10),
+//            importButton.centerYAnchor.constraint(equalTo: addButton.centerYAnchor)
+//        ])
     }
     
     private func setTitle() {
@@ -132,30 +129,33 @@ class HomeView: UIViewController {
         ])
     }
     
-    func teste() {
-        print("Edit action triggered")
+    func updateStack() async {
+        for viewInStack in stackView.subviews {
+            stackView.removeArrangedSubview(viewInStack)
+        }
+        
+        let _ = await generalController.getFormulas()
+        for i in 0..<generalController.formulas.count {
+            let card = Card(formula: generalController.formulas[i])
+            card.deleteAction = { [weak self] in
+                await self?.updateStack()
+            }
+            card.editAction = { [weak self] in
+                guard let self = self else { return }
+                self.navigationController?.pushViewController(CalculatorView(formula: self.generalController.formulas[i]), animated: true)
+            }
+            stackView.addArrangedSubview(card)
+        }
     }
+    
     
     
     private func setCards() {
         Task {
-            for viewInStack in stackView.subviews {
-                stackView.removeArrangedSubview(viewInStack)
-            }
+            await updateStack()
             
-            let _ = await generalController.getFormulas()
+        
             
-            for i in 0..<generalController.formulas.count {
-                let card = Card(formula: generalController.formulas[i])
-                card.deleteAction = { [weak self] in
-                    guard let self = self else { return }
-                    Task {
-                        await self.generalController.deleteFormula(self.generalController.formulas[i])
-                        self.setCards()
-                    }
-                }
-                stackView.addArrangedSubview(card)
-            }
         }
     }
 }

@@ -2,7 +2,7 @@
 //  CalculatorView.swift
 //  BeeCalc
 //
-//  Created by Sofia Lee on 17/05/24.
+//  Created by Pedro Pessuto on 17/05/24.
 //
 
 import UIKit
@@ -10,6 +10,7 @@ import UIKit
 class CalculatorView: UIViewController {
     
     // ========== ATTRIBUTES ==========
+    let formula: Formula?
     let header: UIView = UIView()
     let backButton: Button = Button(systemName: "house.fill")
     
@@ -62,4 +63,13 @@ class CalculatorView: UIViewController {
     }
     
     // ========== CONSTRUCTORS ==========
+    init(formula: Formula? = nil) {
+        self.formula = formula
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        return nil
+    }
+    
 }

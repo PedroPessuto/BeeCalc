@@ -2,7 +2,7 @@
 //  Card.swift
 //  BeeCalc
 //
-//  Created by Sofia Lee on 15/05/24.
+//  Created by Pedro Pessuto on 15/05/24.
 //
 
 import UIKit
@@ -10,21 +10,20 @@ import UIKit
 class Card: UIView {
     
     // ========== ATTRIBUTES ==========
-    public var formula: Formula? = nil
-    public var deleteAction: () -> Void = {}
+    private var generalController: GeneralController = GeneralController.shared
+    public var formula: Formula
+    public var deleteAction: @MainActor () async -> () = {}
     public var editAction: () -> Void = {}
     private let head: UIView = UIView()
     private let title: Title = Title(text: "")
     private let footer: UIView = UIView()
     
     // ========== CONSTRUCTORS ==========
-    init(formula: Formula? = nil) {
+    init(formula: Formula) {      
+        self.formula = formula
+        self.title.text = formula.name
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.formula = formula
-        if let form: Formula = formula {
-            self.title.text = form.name
-        }
         setElements()
     }
     
@@ -144,10 +143,15 @@ class Card: UIView {
     }
     
     @objc private func handleDeleteAction() {
-        deleteAction()
+        Task {
+            await generalController.deleteFormula(formula)
+            await deleteAction()
+
+        }
     }
     
     @objc private func handleEditAction() {
         editAction()
+        
     }
 }
