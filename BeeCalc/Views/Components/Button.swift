@@ -2,7 +2,7 @@
 //  Button.swift
 //  BeeCalc
 //
-//  Created by Sofia Lee on 14/05/24.
+//  Created by Pedro Pessuto on 14/05/24.
 //
 
 import UIKit
@@ -79,25 +79,6 @@ class Button: UIButton {
     
     required init?(coder: NSCoder) {
         return nil
-//        guard let buttonText = coder.decodeObject(forKey: ButtonFields.buttonText.rawValue) as? String,
-//              let variantString = coder.decodeObject(forKey: ButtonFields.variant.rawValue) as? String,
-//              let systemName = coder.decodeObject(forKey: ButtonFields.systemName.rawValue) as? String,
-//              let variant = ButtonVariants(rawValue: variantString)
-//        else {
-//            return nil
-//        }
-//        
-//        self.buttonText = buttonText
-//        self.variant = variant
-//        self.systemName = systemName
-//        super.init(coder: coder)
-//        setupButton()
+
     }
-    
-//    override func encode(with coder: NSCoder) {
-//        coder.encode(buttonText, forKey: ButtonFields.buttonText.rawValue)
-//        coder.encode(variant.rawValue, forKey: ButtonFields.variant.rawValue)
-//        coder.encode(image, forKey: ButtonFields.systemName.rawValue)
-//        super.encode(with: coder)
-//    }
 }

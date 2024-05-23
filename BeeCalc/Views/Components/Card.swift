@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+        
 class Card: UIView {
     
     // ========== ATTRIBUTES ==========

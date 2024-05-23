@@ -2,7 +2,7 @@
 //  GeneralControllerErrors.swift
 //  BeeCalc
 //
-//  Created by Sofia Lee on 20/05/24.
+//  Created by Pedro Pessuto on 20/05/24.
 //
 
 import Foundation

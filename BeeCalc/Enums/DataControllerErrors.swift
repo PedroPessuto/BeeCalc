@@ -2,7 +2,7 @@
 //  DataControllerErrors.swift
 //  BeeCalc
 //
-//  Created by Sofia Lee on 16/05/24.
+//  Created by Pedro Pessuto on 16/05/24.
 //
 
 import Foundation

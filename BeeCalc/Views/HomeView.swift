@@ -24,8 +24,6 @@ class HomeView: UIViewController {
         setElements()
     }
     
-    
-    
     private func setElements() {
         setBackground()
         setToolbar()
@@ -39,11 +37,15 @@ class HomeView: UIViewController {
     }
     
     @objc private func addFormula() {
-        self.navigationController?.pushViewController(CalculatorView(), animated: true)
+        
         Task {
-            let _ = await self.generalController.addFormula()
-            setCards()
+            let response = await self.generalController.addFormula()
+            if case .success(let formula) = response {
+                self.navigationController?.pushViewController(CalculatorView(formula: formula, update: updateStack), animated: true)
+            }
+            
         }
+      
 
 //        let calculatorView = CalculatorView()
 //        calculatorView.modalPresentationStyle = .fullScreen
@@ -132,6 +134,7 @@ class HomeView: UIViewController {
     func updateStack() async {
         for viewInStack in stackView.subviews {
             stackView.removeArrangedSubview(viewInStack)
+            viewInStack.removeFromSuperview()
         }
         
         let _ = await generalController.getFormulas()
@@ -142,7 +145,7 @@ class HomeView: UIViewController {
             }
             card.editAction = { [weak self] in
                 guard let self = self else { return }
-                self.navigationController?.pushViewController(CalculatorView(formula: self.generalController.formulas[i]), animated: true)
+                self.navigationController?.pushViewController(CalculatorView(formula: self.generalController.formulas[i], update: updateStack), animated: true)
             }
             stackView.addArrangedSubview(card)
         }
@@ -153,9 +156,6 @@ class HomeView: UIViewController {
     private func setCards() {
         Task {
             await updateStack()
-            
-        
-            
         }
     }
 }

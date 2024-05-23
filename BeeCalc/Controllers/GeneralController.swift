@@ -12,6 +12,7 @@ class GeneralController {
     static let shared: GeneralController = GeneralController()
     private let dataController: DataController = DataController()
     public var formulas: [Formula] = []
+    public var resultText: String? = nil
     
     public func getFormulas() async -> Result<[Formula], GeneralControllerErrors> {
         let response: Result<[Formula], DataControllerErrors> = await dataController.getFormulas()

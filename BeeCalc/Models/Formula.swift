@@ -2,7 +2,7 @@
 //  Formula.swift
 //  BeeCalc
 //
-//  Created by Sofia Lee on 16/05/24.
+//  Created by Pedro Pessuto on 16/05/24.
 //
 
 import Foundation
@@ -12,10 +12,14 @@ import SwiftData
 class Formula {
     public var id: String = UUID().uuidString
     public var name: String
-    public var formula: String?
+    public var fraction: [String] = []
+    public var isolatedNumbers: [String] = []
+    public var resultNumber: Float = 0
     
     init(name: String) {
         self.name = name
     }
     
 }
+
+
