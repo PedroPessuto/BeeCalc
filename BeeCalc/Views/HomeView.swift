@@ -37,25 +37,13 @@ class HomeView: UIViewController {
     }
     
     @objc private func addFormula() {
-        
         Task {
             let response = await self.generalController.addFormula()
             if case .success(let formula) = response {
-                self.navigationController?.pushViewController(CalculatorView(formula: formula, update: updateStack), animated: true)
+                self.navigationController?.pushViewController(NumberView(formula: formula, update: updateStack), animated: true)
             }
             
         }
-      
-
-//        let calculatorView = CalculatorView()
-//        calculatorView.modalPresentationStyle = .fullScreen
-//        present(calculatorView, animated: true, completion: nil)
-        
-        
-//        let response = await generalController.addFormula()
-//        if case .success(let formula) = response {
-//            navigationController?.pushViewController(CalculatorView(formula: formula), animated: true)
-//        }
     }
     
     private func setToolbar() {
@@ -83,6 +71,7 @@ class HomeView: UIViewController {
         ])
         
         // Import Button
+        
 //        header.addSubview(importButton)
 //        importButton.translatesAutoresizingMaskIntoConstraints = false
 //        
@@ -92,6 +81,7 @@ class HomeView: UIViewController {
 //            importButton.trailingAnchor.constraint(equalTo: addButton.leadingAnchor, constant: -10),
 //            importButton.centerYAnchor.constraint(equalTo: addButton.centerYAnchor)
 //        ])
+        
     }
     
     private func setTitle() {
@@ -145,7 +135,7 @@ class HomeView: UIViewController {
             }
             card.editAction = { [weak self] in
                 guard let self = self else { return }
-                self.navigationController?.pushViewController(CalculatorView(formula: self.generalController.formulas[i], update: updateStack), animated: true)
+                self.navigationController?.pushViewController(NumberView(formula: self.generalController.formulas[i], update: updateStack), animated: true)
             }
             stackView.addArrangedSubview(card)
         }

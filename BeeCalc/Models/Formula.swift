@@ -12,9 +12,9 @@ import SwiftData
 class Formula {
     public var id: String = UUID().uuidString
     public var name: String
-    public var fraction: [String] = []
-    public var isolatedNumbers: [String] = []
-    public var resultNumber: Float = 0
+    public var singleGrades: [String] = []
+    public var weightedGrades: [String] = []
+    public var averageGrade: String? = nil
     
     init(name: String) {
         self.name = name

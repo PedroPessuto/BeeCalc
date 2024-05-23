@@ -11,4 +11,5 @@ enum ButtonVariants: String {
     case purple
     case yellow
     case pink
+    case white
 }
