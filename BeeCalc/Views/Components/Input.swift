@@ -9,15 +9,25 @@ import UIKit
 
 class Input: UITextField {
     
-    init(text: String?) {
+    init(text: String?, variant: InputVariants = .deafult) {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.text = text
-        self.backgroundColor = UIColor(named: "Cinza")
+       
         self.font = .systemFont(ofSize: 20, weight: .bold)
-        self.textColor = UIColor(named: "Roxo")
         self.layer.cornerRadius = 10
         self.textAlignment = .center
+        
+        switch variant {
+            case .deafult:
+                self.backgroundColor = UIColor(named: "Cinza")
+                self.textColor = UIColor(named: "Roxo")
+            
+            case .yellow:
+                self.backgroundColor = UIColor(named: "Amarelo")
+                self.textColor = UIColor.white
+            
+        }
         
         NSLayoutConstraint.activate([
             heightAnchor.constraint(greaterThanOrEqualToConstant: 50)

@@ -70,18 +70,6 @@ class HomeView: UIViewController {
             addButton.trailingAnchor.constraint(equalTo: header.trailingAnchor),
         ])
         
-        // Import Button
-        
-//        header.addSubview(importButton)
-//        importButton.translatesAutoresizingMaskIntoConstraints = false
-//        
-//        NSLayoutConstraint.activate([
-//            importButton.widthAnchor.constraint(equalToConstant: 65),
-//            importButton.heightAnchor.constraint(equalToConstant: 65),
-//            importButton.trailingAnchor.constraint(equalTo: addButton.leadingAnchor, constant: -10),
-//            importButton.centerYAnchor.constraint(equalTo: addButton.centerYAnchor)
-//        ])
-        
     }
     
     private func setTitle() {
@@ -99,14 +87,12 @@ class HomeView: UIViewController {
         list.translatesAutoresizingMaskIntoConstraints = false
         list.showsVerticalScrollIndicator = false
         
-        
         NSLayoutConstraint.activate([
             list.topAnchor.constraint(equalTo: text.bottomAnchor, constant: 20),
             list.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             list.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             list.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
-        
         list.addSubview(stackView)
         stackView.axis = .vertical
         stackView.spacing = 25

@@ -10,6 +10,7 @@
 		F4262F2A2BFFCC7900458F96 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4262F292BFFCC7900458F96 /* NumberView.swift */; };
 		F429F1F82BFFD3CD001F9761 /* MiniTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F429F1F72BFFD3CD001F9761 /* MiniTitle.swift */; };
 		F429F1FA2BFFD72E001F9761 /* P.swift in Sources */ = {isa = PBXBuildFile; fileRef = F429F1F92BFFD72E001F9761 /* P.swift */; };
+		F4479D3D2C010753009D0240 /* InputVariants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4479D3C2C010753009D0240 /* InputVariants.swift */; };
 		F462DEFC2BFE62A300784338 /* SubTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462DEFB2BFE62A300784338 /* SubTitle.swift */; };
 		F462DEFE2BFE702400784338 /* NumberCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462DEFD2BFE702400784338 /* NumberCard.swift */; };
 		F462DF002BFE707300784338 /* NumberCardVariants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462DEFF2BFE707300784338 /* NumberCardVariants.swift */; };
@@ -57,6 +58,7 @@
 		F4262F292BFFCC7900458F96 /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
 		F429F1F72BFFD3CD001F9761 /* MiniTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTitle.swift; sourceTree = "<group>"; };
 		F429F1F92BFFD72E001F9761 /* P.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P.swift; sourceTree = "<group>"; };
+		F4479D3C2C010753009D0240 /* InputVariants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputVariants.swift; sourceTree = "<group>"; };
 		F462DEFB2BFE62A300784338 /* SubTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTitle.swift; sourceTree = "<group>"; };
 		F462DEFD2BFE702400784338 /* NumberCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCard.swift; sourceTree = "<group>"; };
 		F462DEFF2BFE707300784338 /* NumberCardVariants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCardVariants.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				F496AC4F2BF63FD3006E697F /* DataControllerErrors.swift */,
 				F4B8BB902BFBC8250044539D /* GeneralControllerErrors.swift */,
 				F462DEFF2BFE707300784338 /* NumberCardVariants.swift */,
+				F4479D3C2C010753009D0240 /* InputVariants.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				F462DEFC2BFE62A300784338 /* SubTitle.swift in Sources */,
 				F496AC502BF63FD3006E697F /* DataControllerErrors.swift in Sources */,
 				F496AC3C2BF3FC08006E697F /* ButtonVariants.swift in Sources */,
+				F4479D3D2C010753009D0240 /* InputVariants.swift in Sources */,
 				F429F1FA2BFFD72E001F9761 /* P.swift in Sources */,
 				F496AC492BF54EAD006E697F /* Card.swift in Sources */,
 				F496AC542BF7C737006E697F /* CalculatorView.swift in Sources */,
