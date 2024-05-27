@@ -36,6 +36,7 @@ class Card: UIView {
         setHead()
         setTitle()
         setFooter()
+        setRating()
     }
     
     private func setHead() {
@@ -50,7 +51,7 @@ class Card: UIView {
             head.topAnchor.constraint(equalTo: self.topAnchor),
             head.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             head.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            head.heightAnchor.constraint(equalToConstant: 125)
+            head.heightAnchor.constraint(equalToConstant: 150)
         ])
     }
     
@@ -140,6 +141,33 @@ class Card: UIView {
         
         let rightTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleEditAction))
         rightContainer.addGestureRecognizer(rightTapGesture)
+    }
+    
+    private func setRating() {
+      
+        let stackView = UIStackView()
+        self.addSubview(stackView)
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.alignment = .center
+        stackView.spacing = 10
+        
+        for i in 1...5 {
+            let button = UIButton()
+            button.setImage(UIImage(systemName: i > formula.rating ? "star" : "star.fill"), for: .normal)
+            button.tintColor = UIColor.white
+            stackView.addArrangedSubview(button)
+            
+        }
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 2),
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+         
+        ])
     }
     
     @objc private func handleDeleteAction() {

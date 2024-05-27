@@ -40,7 +40,7 @@ class HomeView: UIViewController {
         Task {
             let response = await self.generalController.addFormula()
             if case .success(let formula) = response {
-                self.navigationController?.pushViewController(NumberView(formula: formula, update: updateStack), animated: true)
+                self.navigationController?.pushViewController(FormulaView(formula: formula, update: updateStack), animated: true)
             }
             
         }
@@ -121,7 +121,7 @@ class HomeView: UIViewController {
             }
             card.editAction = { [weak self] in
                 guard let self = self else { return }
-                self.navigationController?.pushViewController(NumberView(formula: self.generalController.formulas[i], update: updateStack), animated: true)
+                self.navigationController?.pushViewController(FormulaView(formula: self.generalController.formulas[i], update: updateStack), animated: true)
             }
             stackView.addArrangedSubview(card)
         }

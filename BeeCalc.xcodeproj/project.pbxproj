@@ -33,6 +33,7 @@
 		F496AC502BF63FD3006E697F /* DataControllerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC4F2BF63FD3006E697F /* DataControllerErrors.swift */; };
 		F496AC522BF640D0006E697F /* GeneralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC512BF640D0006E697F /* GeneralController.swift */; };
 		F496AC542BF7C737006E697F /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496AC532BF7C737006E697F /* CalculatorView.swift */; };
+		F4B423342C04F9ED00F71501 /* FormulaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B423332C04F9ED00F71501 /* FormulaView.swift */; };
 		F4B8BB912BFBC8250044539D /* GeneralControllerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B8BB902BFBC8250044539D /* GeneralControllerErrors.swift */; };
 		F4B8BB932BFD1E440044539D /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B8BB922BFD1E440044539D /* Input.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 		F496AC4F2BF63FD3006E697F /* DataControllerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerErrors.swift; sourceTree = "<group>"; };
 		F496AC512BF640D0006E697F /* GeneralController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralController.swift; sourceTree = "<group>"; };
 		F496AC532BF7C737006E697F /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		F4B423332C04F9ED00F71501 /* FormulaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaView.swift; sourceTree = "<group>"; };
 		F4B8BB902BFBC8250044539D /* GeneralControllerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralControllerErrors.swift; sourceTree = "<group>"; };
 		F4B8BB922BFD1E440044539D /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 				F496AC332BF3EB81006E697F /* HomeView.swift */,
 				F496AC532BF7C737006E697F /* CalculatorView.swift */,
 				F4262F292BFFCC7900458F96 /* NumberView.swift */,
+				F4B423332C04F9ED00F71501 /* FormulaView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				F496AC502BF63FD3006E697F /* DataControllerErrors.swift in Sources */,
 				F496AC3C2BF3FC08006E697F /* ButtonVariants.swift in Sources */,
 				F4479D3D2C010753009D0240 /* InputVariants.swift in Sources */,
+				F4B423342C04F9ED00F71501 /* FormulaView.swift in Sources */,
 				F429F1FA2BFFD72E001F9761 /* P.swift in Sources */,
 				F496AC492BF54EAD006E697F /* Card.swift in Sources */,
 				F496AC542BF7C737006E697F /* CalculatorView.swift in Sources */,

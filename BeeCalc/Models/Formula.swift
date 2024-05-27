@@ -12,9 +12,8 @@ import SwiftData
 class Formula {
     public var id: String = UUID().uuidString
     public var name: String
-    public var singleGrades: [String] = []
-    public var weightedGrades: [String] = ["N1", "1"]
-    public var averageGrade: String = ""
+    public var formula: String = ""
+    public var rating: Int = 1
     
     init(name: String) {
         self.name = name
