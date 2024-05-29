@@ -82,6 +82,7 @@ class FormulaView: UIViewController, UITextFieldDelegate {
             backButton.widthAnchor.constraint(equalToConstant: 65),
             backButton.heightAnchor.constraint(equalToConstant: 65),
             backButton.leadingAnchor.constraint(equalTo: header.leadingAnchor)
+            
         ])
         
         // TextField

@@ -51,7 +51,7 @@ class Card: UIView {
             head.topAnchor.constraint(equalTo: self.topAnchor),
             head.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             head.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            head.heightAnchor.constraint(equalToConstant: 150)
+            head.heightAnchor.constraint(equalToConstant: 125)
         ])
     }
     
@@ -163,7 +163,7 @@ class Card: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 2),
+            stackView.topAnchor.constraint(equalTo: title.bottomAnchor),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
          
